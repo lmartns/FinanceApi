@@ -12,7 +12,10 @@ namespace finance_api.EndPoints
 
             endPointsFinance.MapPost("", async (AddCustomerRequest request, FinanceDbContext context) =>
             {
-                var customer = new Customer(request.Name, request.Email);
+                var customer = new Customer(request.Name, request.Email)
+                {
+                    Id = Guid.NewGuid()
+                };
 
                 await context.Customers.AddAsync(customer);
                 await context.SaveChangesAsync();

@@ -2,9 +2,9 @@ namespace finance_api.Entities
 {
     public class Account
     {
-        private Guid Id { get; init; }
-        private string? AccountNumber { get; set; }
-        private double? Balance { get; set; }
-        private Customer? Costumer { get; set; }
+        public Guid Id { get; init; }
+        public string? AccountNumber { get; set; }
+        public double? Balance { get; set; }
+        public Customer? Costumer { get; set; }
     }
 }

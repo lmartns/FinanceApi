@@ -2,10 +2,10 @@ namespace finance_api.Entities
 {
     public class Transaction
     {
-        private Guid Id { get; init; }
-        private string type;
-        private double Amount { get; set; }
-        private DateTime DateTime { get; set; }
-        private Account Account { get; set; }
+        public Guid Id { get; init; }
+        public string type;
+        public double Amount { get; set; }
+        public DateTime DateTime { get; set; }
+        public Account Account { get; set; }
     }
 }
