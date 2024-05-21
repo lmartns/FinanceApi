@@ -3,12 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace finance_api.Data
 {
-    public class FinanceDbContext : DbContext
+    public class FinanceDbContext(DbContextOptions<FinanceDbContext> options) : DbContext(options)
     {
-        public FinanceDbContext(DbContextOptions<FinanceDbContext> options) : base(options)
-        {
-        }
-
         public DbSet<Customer> Customers { get; set; }
     }
 }
