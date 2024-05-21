@@ -1,6 +1,6 @@
 using finance_api.Data;
+using finance_api.DTO;
 using finance_api.Entities;
-using finance_api.Services;
 
 namespace finance_api.EndPoints
 {
@@ -8,9 +8,9 @@ namespace finance_api.EndPoints
     {
         public static void MapFinanceEndPoints(this WebApplication app)
         {
-            var endPointsFinance = app.MapGroup("Customer");
+            var endPointsFinanceCustomer = app.MapGroup("Customer");
 
-            endPointsFinance.MapPost("", async (AddCustomerRequest request, FinanceDbContext context) =>
+            endPointsFinanceCustomer.MapPost("", async (CustomerDTO request, FinanceDbContext context) =>
             {
                 var customer = new Customer(request.Name, request.Email)
                 {
