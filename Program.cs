@@ -9,6 +9,6 @@ var app = builder.Build();
 
 app.UseArchitectures();
 
-app.MapFinanceEndPoints();
+app.MapCustomerEndPoints();
 
 app.Run();
