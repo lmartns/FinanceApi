@@ -1,6 +1,8 @@
 using finance_api.Data;
 using finance_api.DTO.CustomerAllDtos;
 using finance_api.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace finance_api.EndPoints
@@ -32,9 +34,31 @@ namespace finance_api.EndPoints
 
                 await context.Customers.AddAsync(customer);
                 await context.SaveChangesAsync();
+                return customer;
             });
 
+            endPointsCustomer.MapPut("{Id:guid}", async (Guid Id, CustomerUpdateDto request, FinanceDbContext context) =>
+            {
+                var customer = await context.Customers.FindAsync(Id);
+                if (customer != null)
+                {
+                    customer.Name = request.Name;
+                    customer.Email = request.Email;
+                    await context.SaveChangesAsync();
+                }
+                return customer;
 
+            });
+
+            endPointsCustomer.MapDelete("{Id:guid}", async (Guid Id, FinanceDbContext context) =>
+            {
+                var customer = await context.Customers.FindAsync(Id);
+                if (customer != null)
+                {
+                    context.Customers.Remove(customer);
+                    await context.SaveChangesAsync();
+                }
+            });
         }
     }
 }
