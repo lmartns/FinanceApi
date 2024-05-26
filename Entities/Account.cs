@@ -1,10 +1,17 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace finance_api.Entities
 {
-    public class Account
+    public class Account(int accountNumber, Guid customerId)
     {
-        public Guid Id { get; init; }
-        public string? AccountNumber { get; set; }
-        public double? Balance { get; set; }
-        public Customer? Costumer { get; set; }
+        public Guid Id { get; init; } = Guid.NewGuid();
+
+        [Required]
+        public int AccountNumber { get; set; } = accountNumber;
+
+        public double? Balance { get; set; } = 0;
+
+        [Required]
+        public Guid CustomerId { get; set; } = customerId;
     }
 }

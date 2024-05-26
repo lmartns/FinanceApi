@@ -10,5 +10,6 @@ var app = builder.Build();
 app.UseArchitectures();
 
 app.MapCustomerEndPoints();
+app.MapAccountEndPoints();
 
 app.Run();

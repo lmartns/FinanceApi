@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using finance_api.Data;
 
@@ -11,9 +12,11 @@ using finance_api.Data;
 namespace finance_api.Migrations
 {
     [DbContext(typeof(FinanceDbContext))]
-    partial class FinanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240525232221_Accounts")]
+    partial class Accounts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,16 +31,18 @@ namespace finance_api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AccountNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("AccountNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double?>("Balance")
                         .HasColumnType("float");
 
-                    b.Property<Guid>("CustomerId")
+                    b.Property<Guid?>("CostumerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CostumerId");
 
                     b.ToTable("Accounts");
                 });
@@ -59,6 +64,15 @@ namespace finance_api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("finance_api.Entities.Account", b =>
+                {
+                    b.HasOne("finance_api.Entities.Customer", "Costumer")
+                        .WithMany()
+                        .HasForeignKey("CostumerId");
+
+                    b.Navigation("Costumer");
                 });
 #pragma warning restore 612, 618
         }
