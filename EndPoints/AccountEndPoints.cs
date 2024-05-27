@@ -2,6 +2,7 @@ using finance_api.Data;
 using finance_api.DTO.AccountAllDtos;
 using finance_api.Entities;
 using finance_api.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace finance_api.EndPoints
 {
@@ -11,17 +12,32 @@ namespace finance_api.EndPoints
         {
             var endPointsAccount = app.MapGroup("Account");
 
+            endPointsAccount.MapGet("", async (FinanceDbContext context) =>
+            {
+                var accounts = await context.Accounts.ToListAsync();
+                return Results.Ok(accounts);
+            });
+
+            endPointsAccount.MapGet("{Id:guid}", async (Guid Id, FinanceDbContext context) =>
+            {
+                var account = await context.Accounts.FindAsync(Id);
+                if (account == null)
+                {
+                    return Results.NotFound("Account not found");
+                }
+
+                return Results.Ok(account);
+            });
+
             endPointsAccount.MapPost("", async (AccountAddDto request, FinanceDbContext context) =>
             {
                 var customer = await context.Customers.FindAsync(request.CustomerId);
 
                 if (customer == null)
                 {
-                    // Retornar NotFound quando o cliente não for encontrado
                     return Results.NotFound("Customer not found");
                 }
 
-                // Geração de um novo Id para a conta dentro do escopo do MapPost
                 var newId = IdGenerator.GeneratorNewGuid();
 
                 var account = new Account(request.AccountNumber, request.CustomerId)
@@ -32,9 +48,38 @@ namespace finance_api.EndPoints
                 await context.Accounts.AddAsync(account);
                 await context.SaveChangesAsync();
 
-                // Retornar Created com a URL do novo recurso criado
                 return Results.Created($"/accounts/{account.Id}", account);
             });
+
+            endPointsAccount.MapPut("{Id:guid}", async (Guid Id, AccountUpdateDto request, FinanceDbContext context) =>
+                {
+                    var account = await context.Accounts.FindAsync(Id);
+                    if (account == null)
+                    {
+                        return Results.NotFound("Account not found");
+                    }
+
+                    account.AccountNumber = request.AccountNumber;
+                    await context.SaveChangesAsync();
+
+                    return Results.Ok(account);
+                }
+            );
+
+            endPointsAccount.MapDelete("{Id:guid}", async (Guid Id, FinanceDbContext context) =>
+                {
+                    var account = await context.Accounts.FindAsync(Id);
+                    if (account == null)
+                    {
+                        return Results.NotFound("Account not found");
+                    }
+
+                    context.Accounts.Remove(account);
+                    await context.SaveChangesAsync();
+
+                    return Results.NoContent();
+                }
+            );
         }
     }
 }
