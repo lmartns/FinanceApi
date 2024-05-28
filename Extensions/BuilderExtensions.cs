@@ -1,6 +1,8 @@
 using finance_api.Data;
 using Microsoft.EntityFrameworkCore;
 
+namespace finance_api.Extensions;
+
 public static class BuilderExtensions
 {
     public static void AddArchitectures(this WebApplicationBuilder builder)
@@ -14,4 +16,3 @@ public static class BuilderExtensions
             options.UseSqlServer(builder.Configuration.GetConnectionString("MacDatabase")));
     }
 }
-

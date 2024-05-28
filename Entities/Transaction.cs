@@ -5,7 +5,6 @@ namespace finance_api.Entities
         public Guid Id { get; init; }
         public string type;
         public double Amount { get; set; }
-        public DateTime DateTime { get; set; }
-        public Account Account { get; set; }
+        public DateTime DateTime { get; set; } = DateTime.Now;
     }
 }
