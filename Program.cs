@@ -1,4 +1,4 @@
-using finance_api.EndPoints;
+using finance_api.EndPoints.CategoriesEndPoints.AccountEndPoints;
 using finance_api.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 using finance_api.Extensions;
 
