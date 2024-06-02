@@ -1,5 +1,5 @@
 using finance_api.Data;
-using finance_api.DTO.AccountAllDtos;
+using finance_api.DTO.AccountDtos;
 using finance_api.Entities;
 using finance_api.Helpers;
 

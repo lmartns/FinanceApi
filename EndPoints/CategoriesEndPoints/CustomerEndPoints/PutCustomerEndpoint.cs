@@ -1,5 +1,5 @@
 using finance_api.Data;
-using finance_api.DTO.CustomerAllDtos;
+using finance_api.DTO.CustomerDtos;
 
 namespace finance_api.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 
