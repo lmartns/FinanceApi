@@ -1,7 +1,7 @@
-using finance_api.EndPoints.CategoriesEndPoints.AccountEndPoints;
-using finance_api.EndPoints.CategoriesEndPoints.CustomerEndPoints;
+using FinanceApi.EndPoints.CategoriesEndPoints.AccountEndPoints;
+using FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 
-namespace finance_api.Extensions;
+namespace FinanceApi.Extensions;
 
 public static class EndPointExtensions
 {

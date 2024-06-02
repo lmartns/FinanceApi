@@ -1,6 +1,6 @@
-using finance_api.Data;
+using FinanceApi.Data;
 
-namespace finance_api.EndPoints.CategoriesEndPoints.CustomerEndPoints;
+namespace FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 
 public static class GetByIdCustomerEndpoint
 {

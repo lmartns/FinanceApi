@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace finance_api.Entities
+namespace FinanceApi.Entities
 {
     public class Account(int accountNumber, Guid customerId, double balance)
     {

@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using finance_api.Data;
+using FinanceApi.Data;
 
 #nullable disable
 
-namespace finance_api.Migrations
+namespace FinanceApi.Migrations
 {
     [DbContext(typeof(FinanceDbContext))]
     [Migration("20240526040552_CustomerId")]
@@ -25,7 +25,7 @@ namespace finance_api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("finance_api.Entities.Account", b =>
+            modelBuilder.Entity("FinanceApi.Entities.Account", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace finance_api.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("finance_api.Entities.Customer", b =>
+            modelBuilder.Entity("FinanceApi.Entities.Customer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

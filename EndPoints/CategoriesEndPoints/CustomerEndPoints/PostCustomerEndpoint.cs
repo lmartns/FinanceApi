@@ -1,9 +1,9 @@
-using finance_api.Data;
-using finance_api.DTO.CustomerDtos;
-using finance_api.Entities;
-using finance_api.Helpers;
+using FinanceApi.Data;
+using FinanceApi.DTO.CustomerDtos;
+using FinanceApi.Entities;
+using FinanceApi.Helpers;
 
-namespace finance_api.EndPoints.CategoriesEndPoints.CustomerEndPoints;
+namespace FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 
 public static class PostCustomerEndpoint
 {

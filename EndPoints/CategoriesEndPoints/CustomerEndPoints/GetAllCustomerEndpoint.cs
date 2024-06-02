@@ -1,7 +1,7 @@
-using finance_api.Data;
+using FinanceApi.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace finance_api.EndPoints.CategoriesEndPoints.CustomerEndPoints;
+namespace FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 
 public static class GetAllCustomerEndpoint
 {

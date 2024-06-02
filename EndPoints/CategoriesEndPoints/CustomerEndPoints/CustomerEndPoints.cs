@@ -1,4 +1,4 @@
-namespace finance_api.EndPoints.CategoriesEndPoints.CustomerEndPoints
+namespace FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints
 {
     public static class CustomerEndPoints
     {

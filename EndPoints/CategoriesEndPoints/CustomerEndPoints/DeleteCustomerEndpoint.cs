@@ -1,4 +1,4 @@
-using finance_api.Data;
+using FinanceApi.Data;
 
 public static class DeleteCustomerEndpoint
 {

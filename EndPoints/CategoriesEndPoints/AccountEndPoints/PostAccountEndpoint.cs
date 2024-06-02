@@ -1,9 +1,9 @@
-using finance_api.Data;
-using finance_api.DTO.AccountDtos;
-using finance_api.Entities;
-using finance_api.Helpers;
+using FinanceApi.Data;
+using FinanceApi.DTO.AccountDtos;
+using FinanceApi.Entities;
+using FinanceApi.Helpers;
 
-namespace finance_api.EndPoints.CategoriesEndPoints.AccountEndPoints;
+namespace FinanceApi.EndPoints.CategoriesEndPoints.AccountEndPoints;
 
 public static class PostAccountEndpoint
 {

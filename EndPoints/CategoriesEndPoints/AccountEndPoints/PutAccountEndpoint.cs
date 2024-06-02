@@ -1,7 +1,7 @@
-using finance_api.Data;
-using finance_api.DTO.AccountDtos;
+using FinanceApi.Data;
+using FinanceApi.DTO.AccountDtos;
 
-namespace finance_api.EndPoints.CategoriesEndPoints.AccountEndPoints;
+namespace FinanceApi.EndPoints.CategoriesEndPoints.AccountEndPoints;
 
 public static class PutAccountDelete
 {

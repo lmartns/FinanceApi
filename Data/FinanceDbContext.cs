@@ -1,7 +1,7 @@
-using finance_api.Entities;
+using FinanceApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace finance_api.Data
+namespace FinanceApi.Data
 {
     public class FinanceDbContext(DbContextOptions<FinanceDbContext> options) : DbContext(options)
     {

@@ -1,7 +1,7 @@
-using finance_api.Data;
+using FinanceApi.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace finance_api.Extensions;
+namespace FinanceApi.Extensions;
 
 public static class BuilderExtensions
 {

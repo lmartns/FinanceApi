@@ -1,4 +1,4 @@
-namespace finance_api.Entities
+namespace FinanceApi.Entities
 {
     public class Customer(string name, string email)
     {

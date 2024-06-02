@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace finance_api.Migrations
+namespace FinanceApi.Migrations
 {
     /// <inheritdoc />
     public partial class CustomerId : Migration

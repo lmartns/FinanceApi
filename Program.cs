@@ -1,4 +1,4 @@
-using finance_api.Extensions;
+using FinanceApi.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

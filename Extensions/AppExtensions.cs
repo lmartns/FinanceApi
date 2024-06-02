@@ -1,4 +1,4 @@
-namespace finance_api.Extensions;
+namespace FinanceApi.Extensions;
 
 public static class AppExtensions
 {

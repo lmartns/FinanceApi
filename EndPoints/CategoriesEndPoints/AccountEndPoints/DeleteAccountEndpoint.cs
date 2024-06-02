@@ -1,6 +1,6 @@
-using finance_api.Data;
+using FinanceApi.Data;
 
-namespace finance_api.EndPoints.CategoriesEndPoints.AccountEndPoints;
+namespace FinanceApi.EndPoints.CategoriesEndPoints.AccountEndPoints;
 
 public static class DeleteAccountEndpoint
 {
