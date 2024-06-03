@@ -6,7 +6,7 @@ Finance Api é um projeto desenvolvido em CSharp, utilizando Dotnet que consiste
 
 Em desenvolvimento ♻️
 
-## Indice
+## Índice
 
 ## Pré-requisitos
 - [Dotnet EF CLI](https://learn.microsoft.com/pt-br/ef/core/get-started/overview/install#get-the-net-core-cli-tools)
