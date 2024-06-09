@@ -297,3 +297,18 @@ app.Run();
 
 Lembrando que a estrutura do projeto final pode ficar um pouco diferente de quando foi documentado.
 
+
+## Contribuição
+
+Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga os passos abaixo:
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`).
+3. Faça commit das suas alterações (`git commit -am 'Adiciona nova feature'`).
+4. Envie para a branch principal (`git push origin feature/nova-feature`).
+5. Abra um Pull Request.
+
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
