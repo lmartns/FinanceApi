@@ -8,6 +8,14 @@ Em desenvolvimento ♻️
 
 ## Índice
 
+1. [Pré-requisitos](#pré-requisitos)
+2. [Como utilizar](#como-utilizar)
+3. [Funcionalidades](#funcionalidades)
+   - EndPoints
+      - [Customer](#customer)
+      - [Account](#account)
+5. [Estrutura](#estrutura)
+
 ## Pré-requisitos
 - [Dotnet EF CLI](https://learn.microsoft.com/pt-br/ef/core/get-started/overview/install#get-the-net-core-cli-tools)
 - [Dotnet Core](https://dotnet.microsoft.com/en-us/download)
