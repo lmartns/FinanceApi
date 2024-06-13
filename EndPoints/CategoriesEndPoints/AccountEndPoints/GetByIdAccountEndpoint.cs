@@ -1,4 +1,5 @@
 using FinanceApi.Data;
+using FinanceApi.Entities;
 
 namespace FinanceApi.EndPoints.CategoriesEndPoints.AccountEndPoints;
 
@@ -15,6 +16,12 @@ public static class GetByIdAccountEndpoint
         return Results.NotFound();
       }
       return Results.Ok(account);
-    });
+    })
+    .WithTags("Account")
+    .WithName("GetAccountById")
+    .WithDescription("Get an account by id")
+    .Produces<Account>(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithOpenApi();
   }
 }

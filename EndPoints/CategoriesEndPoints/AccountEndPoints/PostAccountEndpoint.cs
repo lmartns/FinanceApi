@@ -30,6 +30,12 @@ public static class PostAccountEndpoint
       await context.SaveChangesAsync();
 
       return Results.Created($"/accounts/{account.Id}", account);
-    });
+    })
+    .WithTags("Account")
+    .WithName("PostAccount")
+    .WithDescription("Create a new account")
+    .Produces<Account>(StatusCodes.Status201Created)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithOpenApi();
   }
 }

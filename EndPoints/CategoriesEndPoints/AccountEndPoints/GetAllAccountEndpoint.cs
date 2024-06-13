@@ -1,4 +1,5 @@
 using FinanceApi.Data;
+using FinanceApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceApi.EndPoints.CategoriesEndPoints.AccountEndPoints;
@@ -13,6 +14,12 @@ public static class GetAllAccountEndpoint
     {
       var accounts = await context.Accounts.ToListAsync();
       return Results.Ok(accounts);
-    });
+    })
+    .WithTags("Account")
+    .WithName("GetAllAccount")
+    .WithDescription("Get all accounts")
+    .Produces<List<Account>>(StatusCodes.Status200OK)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithOpenApi();
   }
 }

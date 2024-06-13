@@ -1,4 +1,5 @@
 using FinanceApi.Data;
+using FinanceApi.Entities;
 
 namespace FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 
@@ -17,6 +18,12 @@ public static class GetByIdCustomerEndpoint
                 }
                 return Results.Ok(customer);
             }
-        );
+        )
+        .WithTags("Customer")
+        .WithName("GetCustomerById")
+        .WithDescription("Get a customer by id")
+        .Produces<Customer>(StatusCodes.Status200OK)
+        .Produces(StatusCodes.Status404NotFound)
+        .WithOpenApi();
     }
 }

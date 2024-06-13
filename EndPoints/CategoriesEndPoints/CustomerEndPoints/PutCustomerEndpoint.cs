@@ -1,5 +1,6 @@
 using FinanceApi.Data;
 using FinanceApi.DTO.CustomerDtos;
+using FinanceApi.Entities;
 
 namespace FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints;
 
@@ -22,6 +23,12 @@ public static class PutCustomerEndpoint
 
             await context.SaveChangesAsync();
             return Results.Ok(customer);
-        });
+        })
+        .WithTags("Customer")
+        .WithName("PutCustomer")
+        .WithDescription("Update a customer")
+        .Produces<Customer>(StatusCodes.Status200OK)
+        .Produces(StatusCodes.Status404NotFound)
+        .WithOpenApi();
     }
 }

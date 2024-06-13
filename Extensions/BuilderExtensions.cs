@@ -13,6 +13,6 @@ public static class BuilderExtensions
         builder.Services.AddScoped<FinanceDbContext>();
 
         builder.Services.AddDbContext<FinanceDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("MacDatabase")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("")));
     }
 }

@@ -22,6 +22,12 @@ public static class PostCustomerEndpoint
                 await context.SaveChangesAsync();
                 return Results.Created($"/customers/{customer.Id}", customer);
             }
-        );
+        )
+        .WithTags("Customer")
+        .WithName("PostCustomer")
+        .WithDescription("Create a new customer")
+        .Produces<Customer>(StatusCodes.Status201Created)
+        .Produces(StatusCodes.Status400BadRequest)
+        .WithOpenApi();
     }
 }

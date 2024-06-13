@@ -1,4 +1,5 @@
 using FinanceApi.Data;
+using FinanceApi.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceApi.EndPoints.CategoriesEndPoints.CustomerEndPoints;
@@ -14,6 +15,11 @@ public static class GetAllCustomerEndpoint
                 var customers = await context.Customers.ToListAsync();
                 return Results.Ok(customers);
             }
-        );
+        )
+        .WithTags("Customer")
+        .WithName("GetAllCustomer")
+        .WithDescription("Get all customers")
+        .Produces<List<Customer>>(StatusCodes.Status200OK)
+        .WithOpenApi();
     }
 }

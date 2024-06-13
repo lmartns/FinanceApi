@@ -20,6 +20,12 @@ public static class DeleteAccountEndpoint
       await context.SaveChangesAsync();
 
       return Results.NoContent();
-    });
+    })
+    .WithTags("Account")
+    .WithName("DeleteAccount")
+    .Produces(StatusCodes.Status204NoContent)
+    .Produces(StatusCodes.Status404NotFound)
+    .WithDescription("Delete an account. Returns 204 No Content if the account is successfully deleted, or 404 NotFound if no account with the specified ID exists.")
+    .WithOpenApi();
   }
 }
